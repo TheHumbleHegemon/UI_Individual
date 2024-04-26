@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <a href="app.html"><img src="Images/Close.png" alt="" style="width:42px;height:42px;" class="btn dark"></a>
+        <div class="heatBack"></div>
+        <span class="plus"></span>
+        <span class="num">15</span>
+        <br>
+        <span class="min"></span>
+    </div>
+    <!--code for incremental numbers from https://www.codingnepalweb.com/button-increment-decrement-number/-->
+    <script>
+        const plus = document.querySelector(".plus"),
+            minus = document.querySelector(".min"),
+            num = document.querySelector(".num");
+            let a = 15;
+            plus.addEventListener("click", ()=>{
+                a++;
+                a = (a < 10) ? "0" + a : a;
+                num.innerText = a;
+            } );
+            minus.addEventListener("click", ()=>{
+                if(a > 1){
+                    a--;
+                    a = (a < 10) ? "0" + a : a;
+                    num.innerText = a;
+                }
+            });
+    </script>
+</body>
+</html>
